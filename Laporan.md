@@ -1,14 +1,14 @@
 # Laporan Proyek Machine Learning Terapan - Achmad Fauzihan Bagus Sajiwo
 
 <div align="center">
-	<p>STROKE RISK - PREDICTIVE ANALYSIS</p>
+	<p>MOVIE - RECOMMENDATION SYSTEM</p>
 </div>
 
 <div align="center">
 	<img src="https://github.com/fabasassa-lab/Stroke-Risk-Prediction/blob/main/image/stroke.png?raw=true">
 </div>
 
-## Domain Proyek
+## Project Overview
 
 Stroke merupakan salah satu penyebab utama kematian dan kecacatan di Indonesia. Menurut studi Global Burden of Disease (GBD) tahun 2019, Indonesia memiliki angka kematian akibat stroke yang tinggi, dengan tingkat kematian yang disesuaikan berdasarkan usia dan jenis kelamin sebesar 193,3 per 100.000 penduduk [1].​
 
@@ -42,9 +42,9 @@ Untuk mengukur kinerja dari model yang dibangun, digunakan metrik evaluasi klasi
 - Akurasi (Accuracy)
 
 ## Data Understanding
-Data yang digunakan dalam proyek ini adalah **35000** data **Stroke Risk Prediction Dataset based on Literature** yang dapat diunduh dari situs [Kaggle](https://www.kaggle.com/datasets/mahatiratusher/stroke-risk-prediction-dataset-v2). Terdapat 19 fitur (kolom) yang terdapat pada dataset ini.
+Data yang digunakan dalam proyek ini adalah **35000** data **Movies & Ratings for Recommendation System** yang dapat diunduh dari situs [Kaggle](https://www.kaggle.com/datasets/nicoletacilibiu/movies-and-ratings-for-recommendation-system). Terdapat 19 fitur (kolom) yang terdapat pada dataset ini.
 
-### Variabel-variabel pada Stroke Risk Prediction Dataset based on Literature dataset adalah sebagai berikut:
+### Variabel-variabel pada Movies & Ratings for Recommendation System dataset adalah sebagai berikut:
 
 1. Chest Pain	
 - Integer (0/1): Menunjukkan apakah individu mengalami nyeri dada, gejala umum kondisi kardiovaskular.
