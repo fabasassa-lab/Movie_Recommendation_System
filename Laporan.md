@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-	<img src="https://github.com/fabasassa-lab/Stroke-Risk-Prediction/blob/main/image/stroke.png?raw=true">
+	<img src="https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/movie.jpeg?raw=true">
 </div>
 
 ## Project Overview
