@@ -133,6 +133,26 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
 
 - **Cara kerja** : Dalam membangun model **Content Based Filtering**, digunakan module TfidfVectorizer dari library sklearn. Mengekstraksi fitur konten (misalnya genre). Merepresentasi fitur menggunakan TF-IDF Vectorizer.  Menghitung Cosine Similarity antar film. Mencari film yang paling mirip (berdasarkan nilai cosine similarity). Mengembalikan Top-k film yang mirip dengan nama_movie. Pada fungsi tersebut juga ditetapkan k = 5 yang berarti akan mengeluarkan rekomendasi 5 film teratas berdasarkan genre.
 
+Tabel 1. **Movie** yang disukai oleh pengguna dimasa lalu.
+
+|      | id     | movie_name            | genre                   |
+|------|--------|-----------------------|-------------------------|
+| 8482 | 113604 | If I Stay (2014) | Drama |
+
+Berdasarkan Tabel 1, terlihat bahwa pengguna menyukai film berjudul If I Stay (2014 yang memiliki genre Drama.
+Sistem kemudian memberikan rekomendasi film lain yang memiliki kemiripan dengan If I Stay (2014).
+
+
+Tabel 2. Rekomendasi movie yang mirip dengan **If I Stay (2014)**
+
+|   | movie_name                                       | genre            | 
+|---|--------------------------------------------------|------------------|
+| 0 | Monsieur Ibrahim (Monsieur Ibrahim et les fleu... | Drama |
+| 1 | Legend of 1900, The (a.k.a. The Legend of the ... | Drama |
+| 2 | Away from Her (2006)                            | Drama |
+| 3 | Limbo (1999                                  | Drama |
+| 4 | Kiss of the Spider Woman (1985)	       | Drama |
+
 - Kelebihan:
 	- Personalized: Rekomendasi benar-benar disesuaikan dengan preferensi unik setiap pengguna berdasarkan riwayat mereka sendiri, tanpa perlu data pengguna lain.
 	- Tidak Bergantung pada Jumlah Pengguna: Tetap bisa bekerja meskipun hanya ada sedikit pengguna (tidak membutuhkan komunitas besar).
