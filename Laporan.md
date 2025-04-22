@@ -10,13 +10,13 @@
 
 ## Project Overview
 
-Stroke merupakan salah satu penyebab utama kematian dan kecacatan di Indonesia. Menurut studi Global Burden of Disease (GBD) tahun 2019, Indonesia memiliki angka kematian akibat stroke yang tinggi, dengan tingkat kematian yang disesuaikan berdasarkan usia dan jenis kelamin sebesar 193,3 per 100.000 penduduk [1].​
+Dengan pertumbuhan pesat industri hiburan digital, pengguna dihadapkan pada ribuan pilihan film dan serial setiap hari. Platform seperti Netflix, Hulu, dan Disney+ menyediakan beragam konten, yang justru menimbulkan fenomena yang disebut sebagai information overload atau kelebihan informasi. Oleh karena itu, sistem rekomendasi menjadi komponen penting dalam meningkatkan pengalaman pengguna dengan menyaring dan menyajikan konten yang sesuai dengan preferensi individu.
 
-Prevalensi stroke di Indonesia juga menunjukkan tren peningkatan. Data dari Riset Kesehatan Dasar (Riskesdas) tahun 2018 mencatat bahwa prevalensi stroke meningkat dari 7 per 1.000 penduduk pada tahun 2013 menjadi 10,9 per 1.000 penduduk pada tahun 2018 [1].​
+Sistem rekomendasi film tidak hanya membantu pengguna menemukan film yang relevan, tetapi juga berkontribusi pada peningkatan waktu tonton dan retensi pelanggan. Studi oleh Gomez-Uribe & Hunt (2015) yang dilakukan di Netflix menunjukkan bahwa sekitar 75% dari tayangan berasal dari sistem rekomendasi mereka. Hal ini menunjukkan pentingnya sistem yang mampu memahami pola dan minat pengguna secara akurat.
 
-Faktor risiko utama stroke meliputi hipertensi, diabetes, merokok, dan gaya hidup sedentari. Deteksi dini terhadap individu dengan risiko tinggi sangat penting untuk mencegah kejadian stroke. Namun, keterbatasan dalam akses layanan kesehatan dan kurangnya kesadaran masyarakat seringkali menghambat upaya pencegahan.​
+Pendekatan tradisional seperti content-based filtering dan collaborative filtering telah digunakan secara luas, namun memiliki keterbatasan dalam hal sparsity data dan cold-start problem. Untuk mengatasi tantangan tersebut, pendekatan deep learning telah menjadi solusi alternatif yang menjanjikan. Model deep learning seperti neural collaborative filtering (NCF) dapat menangkap hubungan non-linear antara pengguna dan item (film) yang tidak dapat ditangkap oleh metode klasik (He et al., 2017).
 
-Dalam konteks ini, pemanfaatan teknologi dan data science menjadi sangat penting. Dengan memanfaatkan data historis pasien dan teknik machine learning, kita dapat membangun model prediktif yang mampu mengidentifikasi individu yang memiliki risiko tinggi terkena stroke. Model semacam ini sangat bermanfaat untuk digunakan oleh tenaga medis, instansi kesehatan, hingga masyarakat umum dalam rangka mendukung pengambilan keputusan preventif yang cepat dan akurat.​
+Dalam proyek ini, sistem rekomendasi dikembangkan menggunakan pendekatan pembelajaran mendalam dengan arsitektur neural network. Data yang digunakan mencakup ID pengguna, ID film, serta rating yang diberikan, untuk kemudian diproses menggunakan teknik embedding dan pemodelan interaksi melalui jaringan saraf tiruan. Model ini dievaluasi menggunakan metrik seperti Root Mean Squared Error (RMSE) dan Mean Squared Error (MSE) guna memastikan keakuratan prediksi sistem terhadap preferensi pengguna.
 
 
 ## Business Understanding
@@ -249,6 +249,10 @@ _Github:_
 https://github.com/fabasassa-lab/Stroke-Risk-Prediction
 
 _Referensi:_
-[1] Venketasubramanian, N., Yudiarto, F. L., & Tugasworo, D. (2022). Stroke burden and stroke services in Indonesia. Frontiers in Neurology, 13, 850282. https://doi.org/10.3389/fneur.2022.850282
+[1] He, X., Liao, L., Zhang, H., Nie, L., Hu, X., & Chua, T. S. (2017). Neural collaborative filtering. Proceedings of the 26th International Conference on World Wide Web (WWW '17), 173–182. https://doi.org/10.1145/3038912.3052569
 
-[2] Mahatir Ahmed Tusher, "Stroke Risk Prediction Dataset based on Literature", Kaggle, https://www.kaggle.com/datasets/mahatiratusher/stroke-risk-prediction-dataset-v2
+[2] Gomez-Uribe, C. A., & Hunt, N. (2015). The Netflix recommender system: Algorithms, business value, and innovation. ACM Transactions on Management Information Systems (TMIS), 6(4), 1–19. https://doi.org/10.1145/2843948
+
+[3] Zhang, S., Yao, L., Sun, A., & Tay, Y. (2019). Deep learning based recommender system: A survey and new perspectives. ACM Computing Surveys (CSUR), 52(1), 1–38. https://doi.org/10.1145/3285029
+
+[4] movies-and-ratings-for-recommendation-system. https://www.kaggle.com/datasets/nicoletacilibiu/movies-and-ratings-for-recommendation-system
