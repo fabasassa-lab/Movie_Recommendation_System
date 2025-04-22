@@ -186,7 +186,7 @@ Tabel 4. Movie Top 10 yang direkomendasikan.
 | Heidi Fleiss: Hollywood Madam (1995)                    | Documentary		    |
 | Paths of Glory (1957)                                | Drama|War                  |
 | Jonah Who Will Be 25 in the Year 2000 (Jonas qui aura 25 ans en l'an 2000) (1976)                                       | Comedy                    |
-| Stunt Man, The (1980)                          | Action|Adventure|Comedy|Drama|Romance|Thriller                   |
+| Stunt Man, The (1980)                          | Action|Adventure|Comedy|Drama|Romance|Thriller |
 | Belle époque (1992)                      	| Comedy|Romance                       |
 | Trial, The (Procès, Le) (1962)                                       | Drama                   |
 | Adam's Rib (1949)                                    | Comedy|Romance           |
