@@ -51,7 +51,7 @@ Data yang digunakan dalam proyek ini adalah data **Movies & Ratings for Recommen
 ### Variabel-variabel pada Movies & Ratings for Recommendation System dataset adalah sebagai berikut:
 
 1. Movie	
-- Judul movie yang tersedia
+- Daftar judul movie yang tersedia
 
 2. Rating	
 - Daftar penilaian dari user mengenai movie yang tersedia
