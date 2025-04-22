@@ -44,70 +44,17 @@ Solusi yang ditawarkan dalam proyek ini adalah dengan mengimplementasikan dua al
 - Content-Based Filtering:
 	Algoritma ini merekomendasikan film kepada pengguna berdasarkan kesamaan karakteristik antar item (film), seperti genre, sutradara, pemeran, atau sinopsis. Sistem menganalisis film-film yang disukai oleh pengguna di masa lalu, lalu mencari film lain dengan konten yang serupa. Dengan demikian, rekomendasi yang dihasilkan bersifat personal dan relevan dengan preferensi unik setiap pengguna.
 
-Untuk mengukur kinerja dari model yang dibangun, digunakan metrik evaluasi, yaitu:
-- Root Mean Squared Error (RMSE)
 
 ## Data Understanding
-Data yang digunakan dalam proyek ini adalah **35000** data **Movies & Ratings for Recommendation System** yang dapat diunduh dari situs [Kaggle](https://www.kaggle.com/datasets/nicoletacilibiu/movies-and-ratings-for-recommendation-system). Terdapat 19 fitur (kolom) yang terdapat pada dataset ini.
+Data yang digunakan dalam proyek ini adalah data **Movies & Ratings for Recommendation System** yang dapat diunduh dari situs [Kaggle](https://www.kaggle.com/datasets/nicoletacilibiu/movies-and-ratings-for-recommendation-system).
 
 ### Variabel-variabel pada Movies & Ratings for Recommendation System dataset adalah sebagai berikut:
 
-1. Chest Pain	
-- Integer (0/1): Menunjukkan apakah individu mengalami nyeri dada, gejala umum kondisi kardiovaskular.
+1. Movie	
+- Judul movie yang tersedia
 
-2. Shortness of Breath	
-- Integer (0/1): Menunjukkan apakah orang tersebut mengalami kesulitan bernapas, yang mungkin mengindikasikan masalah jantung atau paru-paru.
-
-3. Irregular Heartbeat	
-- Integer (0/1): Menunjukkan apakah orang tersebut memiliki detak jantung tidak teratur, faktor risiko stroke yang potensial.
-
-4. Fatigue & Weakness	
-- Integer (0/1): Menunjukkan kelelahan terus-menerus dan kelemahan otot, tanda-tanda umum masalah kardiovaskular.
-
-5. Dizziness	
-- Integer (0/1): Melaporkan apakah individu tersebut sering mengalami pusing, yang mungkin terkait dengan sirkulasi yang buruk.
-
-6. Swelling (Edema)	
-- Integer (0/1): Menunjukkan pembengkakan pada ekstremitas karena retensi cairan, masalah kardiovaskular yang potensial.
-
-7. Neck/Jaw/Pain	
-- Integer (0/1): Menjelaskan nyeri di area ini, yang dapat menjadi tanda peringatan stroke atau serangan jantung.
-
-8. Excessive Sweating	
-- Integer (0/1): Menunjukkan apakah individu mengalami keringat yang tidak biasa, yang dapat mengindikasikan gangguan kardiovaskular.
-
-9. Persistent Cough	
-- Integer (0/1): Menunjukkan batuk kronis, yang dapat dikaitkan dengan gagal jantung.
-
-10. Nausea/Vomiting	
-- Integer (0/1): Melaporkan mual atau muntah yang sering, yang dapat dikaitkan dengan kejadian kardiovaskular.
-
-11. High Blood Pressure	
-- Integer (0/1): Mewakili apakah orang tersebut memiliki tekanan darah tinggi, faktor risiko utama untuk stroke.
-
-12. Chest Discomfort (Activity)	
-- Integer (0/1): Menunjukkan apakah individu mengalami ketidaknyamanan dada selama aktivitas fisik.
-
-13. Cold Hands/Feet	
-- Integer (0/1): Menunjukkan apakah orang tersebut sering mengalami ekstremitas dingin, yang merupakan tanda kemungkinan masalah sirkulasi.
-
-14. Snoring/Sleep Apnea	
-- Integer (0/1): Melaporkan apakah orang tersebut mengalami apnea tidur, yang dapat meningkatkan risiko stroke.
-
-15. Anxiety/Feeling of Doom	
-- Integer (0/1): Menunjukkan apakah orang tersebut sering mengalami kecemasan atau perasaan akan datangnya malapetaka, yang dapat dikaitkan dengan gangguan kardiovaskular.
-
-16. Stroke Risk Percentage
-- Float (0-100): Perkiraan persentase risiko terkena stroke, berdasarkan tingkat keparahan gejala dan indikator medis.
-
-17. At Risk (Binary)	
-- Integer (0/1): Menunjukkan apakah orang tersebut diklasifikasikan sebagai berisiko terkena stroke (1) atau tidak (0).
-
-18. Age	
-- Integer (18-86): Usia individu, faktor penting dalam menilai risiko stroke.
-
-19. Gender
-- String: Male/Female
+2. Rating	
+- Daftar penilaian dari user mengenai movie yang tersedia
 
 ### Explanatory Data Analysis
 
