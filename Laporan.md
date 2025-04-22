@@ -77,7 +77,7 @@ Pada Gambar 2, _table_ di atas diperlihatkan mengenai contoh data yang terdapat 
 
 ![ratd](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/ratd.png?raw=true)
 
-Pada Gambar 3, _table_ di atas diperlihatkan mengenai distribusi data yang terdapat pada dataset ratings.
+Pada Gambar 3, _table_ di atas diperlihatkan mengenai distribusi data yang terdapat pada dataset ratings. Dari _table_ di atas, diketahui bahwa nilai maksimum rating adalah 5 dan nilai minimumnya adalah 0. Artinya, skala rating berkisar antara 0 hingga 5.
 
 ![plot](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/plot.png?raw=true)
 
@@ -86,19 +86,35 @@ Pada Gambar 4, _plot_ di atas melihatkan distribusi rating pada dataset **Movie 
 
 ## Data Preparation
 
-1. Seleksi Data
-- Pada tahap awal, dilakukan pemeriksaan terhadap nilai yang hilang (missing values) di setiap kolom dataset. Jika ditemukan, nilai tersebut dapat diatasi dengan metode seperti imputasi (mean, median, modus) atau dihapus tergantung pada proporsi dan pentingnya kolom tersebut.
+1. Menggabungkan Data
+- Pada tahap awal, dilakukan proses penggabungan beberapa dataset, yaitu data film dan data rating.
+- Alasan: Penggabungan data dilakukan untuk menyatukan informasi dari berbagai sumber
+
+2. Cek Missing Value
+- Melakukan pemeriksaan terhadap nilai yang hilang (missing values) di setiap kolom dataset. Jika ditemukan, nilai tersebut dapat diatasi dengan metode seperti imputasi (mean, median, modus) atau dihapus tergantung pada proporsi dan pentingnya kolom tersebut.
 - Alasan: Missing values dapat menyebabkan error saat pelatihan model atau menghasilkan hasil yang bias jika tidak ditangani dengan tepat.
 
-2. Label Encoding
-- Variabel kategorik seperti gender dikonversi ke dalam bentuk numerik menggunakan metode Label Encoding agar bisa digunakan oleh algoritma pembelajaran mesin.
-- Alasan: Sebagian besar algoritma machine learning tidak dapat bekerja langsung dengan data kategorik, sehingga perlu diubah ke dalam representasi numerik.
+3. Mengurutkan Data
+- Melakukan proses pengurutan data untuk mempermudah analisis dan pemrosesan selanjutnya.
+- Alasan: Mempermudah proses analisis, mengidentifikasi pola penting, serta meningkatkan efisiensi saat membangun dan mengevaluasi model rekomendasi.
 
-3. Feature Selection
-- Pemilihan fitur dilakukan untuk menyaring variabel-variabel yang benar-benar berkontribusi terhadap prediksi atau **redundan**. Misalnya dengan menghindari fitur yang memiliki korelasi sangat tinggi satu sama lain atau yang tidak memiliki hubungan dengan variabel target at_risk.
-- Alasan: Feature selection bertujuan untuk meningkatkan akurasi model, menghindari overfitting, dan mempercepat waktu pelatihan dengan hanya menyertakan fitur yang penting.
+4. Konversi Data to List
+- Melakukan proses konversi data ke dalam bentuk list (daftar). Konversi ini dilakukan untuk menyiapkan data dalam format yang dapat diterima oleh algoritma
+- Alasan: Proses pelatihan model atau evaluasi terkadang lebih mudah jika data telah dikonversi ke bentuk dasar seperti list atau array numpy.
 
-4. Splitting Data
+5. Membuat Dictionary
+- Memetakan nilai asli dari suatu kolom (seperti ID pengguna atau ID film) ke dalam bentuk numerik yang dapat digunakan dalam model
+- Alasan: Agar kita bisa mengubah kembali hasil prediksi ke bentuk ID atau nama film yang dikenali pengguna.
+
+6. TF-IDF Vectorizer
+- Mengubah kolom genre menjadi vektor numerik dan menghitung kemiripan antar film berdasarkan konten (fitur teks), seperti genre.
+- Alasan: TF-IDF membantu model memahami bahwa dua film bisa mirip karena memiliki genre atau deskripsi yang serupa, sehingga cocok direkomendasikan ke pengguna yang menyukai salah satunya.
+
+7. Cosine Similarity
+- Mengukur kemiripan antar film berdasarkan fitur yang sudah ditransformasikan (biasanya dari TF-IDF) dan menemukan film-film yang paling mirip dengan film yang pernah ditonton atau disukai pengguna.
+- Alasan: Cocok untuk data vektor TF-IDF, karena menghitung arah vektor, bukan besarannya.
+
+8. Splitting Data
 - Dataset dibagi menjadi dua bagian: data latih (train) dan data uji (test), biasanya dengan perbandingan 80:20.
 - Alasan: Tujuannya adalah untuk mengevaluasi kemampuan generalisasi model. Model dilatih pada data latih dan dievaluasi pada data uji yang tidak pernah dilihat sebelumnya.
 
