@@ -153,11 +153,14 @@ Tabel 2. Rekomendasi movie yang mirip dengan **If I Stay (2014)**
 | 3 | Limbo (1999                                  | Drama |
 | 4 | Kiss of the Spider Woman (1985)	       | Drama |
 
-- Kelebihan:
+Berdasarkan Tabel 2, dapat diketahui bahwa pengguna memiliki ketertarikan pada film berjudul If I Stay (2014) yang mengusung genre Drama.
+Oleh karena itu, sistem merekomendasikan film-film lain yang memiliki karakteristik serupa dengan If I Stay (2014).
+
+- Kelebihan **Content Based Filtering**:
 	- Personalized: Rekomendasi benar-benar disesuaikan dengan preferensi unik setiap pengguna berdasarkan riwayat mereka sendiri, tanpa perlu data pengguna lain.
 	- Tidak Bergantung pada Jumlah Pengguna: Tetap bisa bekerja meskipun hanya ada sedikit pengguna (tidak membutuhkan komunitas besar).
 	- Bisa Merekomendasikan Item Baru (Cold Start untuk Item): Selama item tersebut memiliki informasi fitur yang lengkap (misalnya genre, deskripsi, aktor), sistem tetap bisa memberikan rekomendasi, meski belum pernah dirating oleh pengguna lain..
-- Kekurangan:
+- Kekurangan **Content Based Filtering**:
 	- Cenderung Terbatas (Overspecialization): Rekomendasi bisa menjadi terlalu mirip dengan item sebelumnya, membuat pengguna tidak menemukan hal baru (kurang keberagaman).
 	- Cold Start untuk Pengguna Baru: Sulit memberikan rekomendasi jika pengguna belum memiliki riwayat interaksi atau rating sebelumnya.
 	- Ketergantungan pada Fitur: Kualitas rekomendasi sangat tergantung pada kualitas dan kelengkapan informasi fitur item (genre, sinopsis, aktor, dll). Jika datanya terbatas, performa bisa menurun.
@@ -166,11 +169,38 @@ Tabel 2. Rekomendasi movie yang mirip dengan **If I Stay (2014)**
 
 - **Cara kerja** : Dalam membangun model **Collaborative Filtering*, menggunakan pendekatan model-based dengan membuat sebuah arsitektur neural network sederhana bernama RecommenderNet. Model ini dirancang untuk mempelajari representasi (embedding) dari pengguna dan film, kemudian menghitung skor kecocokan antar keduanya. Proses pelatihan model menggunakan optimizer Adam dan dievaluasi dengan Root Mean Squared Error (RMSE) sebagai metrik. Model RecommenderNet mempelajari representasi pengguna dan film melalui dua layer embedding, lalu menghitung nilai kecocokan (match score) di antara keduanya menggunakan operasi dot product. Nilai tersebut kemudian disesuaikan dengan bias pengguna dan film, dan hasil akhirnya dipetakan ke dalam rentang 0 hingga 1 menggunakan fungsi aktivasi sigmoid.
 
-- Kelebihan:
+Tabel 3. Movie genre yang direkomendasikan berdasarkan rating tertinggi.
+
+| Movie Name                                                           | Genre                          |
+| ---------------------------------------------------------------------| -------------------------------|
+| Star Wars: Episode IV - A New Hope (1977) | Comedy|War               | Action|Adventure|Sci-Fi 	|
+| Sin City (2005)                                               | Action|Crime|Film-Noir|Mystery|Thriller   |
+| Harry Potter and the Goblet of Fire (2005)                           | Adventure|Fantasy|Thriller|IMAX |
+Thank You for Smoking (2006)                                           | Comedy|Drama     |
+| Star Trek Into Darkness (2013)        			| Action|Adventure|Sci-Fi|IMAX              |
+
+Tabel 4. Movie Top 10 yang direkomendasikan.
+
+| Movie Name                                              | Genre                            |
+| --------------------------------------------------------| ---------------------------------|
+| Heidi Fleiss: Hollywood Madam (1995)                    | Documentary		    |
+| Paths of Glory (1957)                                | Drama|War                  |
+| Jonah Who Will Be 25 in the Year 2000 (Jonas qui aura 25 ans en l'an 2000) (1976)                                       | Comedy                    |
+| Stunt Man, The (1980)                          | Action|Adventure|Comedy|Drama|Romance|Thriller                   |
+| Belle époque (1992)                      	| Comedy|Romance                       |
+| Trial, The (Procès, Le) (1962)                                       | Drama                   |
+| Adam's Rib (1949)                                    | Comedy|Romance           |
+| Bad Boy Bubby (1993)                                   | Drama |
+| Enter the Void (2009) 			| Drama                     |
+| Brooklyn (2015)                		| CDrama|Romance            |
+
+Pada Tabel 4 dan Tabel 5, *movie* yang bergenre drama menjadi *movie* yang paling tinggi ratingnya. Kemudian *top 10 movie* yang direkomendasikan sistem adalah *movie* dengan genre *comedy* dan *romance*.
+
+- Kelebihan **Collaborative Filtering**:
 	- Tidak Membutuhkan Informasi Item yang Detail: Sistem hanya membutuhkan data interaksi pengguna (seperti rating), tanpa harus tahu isi atau deskripsi dari item tersebut (misalnya genre, sinopsis).
 	- Bisa Menangkap Preferensi yang Kompleks dan Tersembunyi: Karena rekomendasi dibuat dari pola kesamaan antar pengguna/item, sistem dapat menemukan hubungan menarik yang tidak eksplisit (misalnya, dua film berbeda genre tapi disukai oleh pengguna yang sama).
 	- Bisa Merekomendasikan Hal Baru untuk Pengguna: Sistem bisa menyarankan item yang sangat berbeda dari histori pengguna, selama ada pengguna lain yang mirip pernah menyukai item tersebut (lebih variatif).
-- Kekurangan:
+- Kekurangan **Collaborative Filtering**:
 	- Skalabilitas: Saat jumlah pengguna dan item sangat besar, algoritma ini bisa menjadi berat secara komputasi dan membutuhkan optimisasi.
 	- Sparsity: Banyak dataset interaksi yang bersifat sparse (jarang), karena pengguna hanya berinteraksi dengan sebagian kecil item. Ini bisa mengurangi akurasi prediksi.
 	- Masalah Popularitas: Cenderung merekomendasikan item populer karena lebih banyak data interaksinya, sehingga item yang kurang populer bisa terabaikan meskipun berkualitas.
