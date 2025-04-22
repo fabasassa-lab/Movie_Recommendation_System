@@ -50,11 +50,16 @@ Data yang digunakan dalam proyek ini adalah data **Movies & Ratings for Recommen
 
 ### Variabel-variabel pada Movies & Ratings for Recommendation System dataset adalah sebagai berikut:
 
-1. Movie	
-- Daftar judul movie yang tersedia
+1. Movie : Daftar movie yang tersedia
+	- movieId : merupakan id (penanda) pada setiap movie
+	- title : merupakan judul movie 
+	- genres : merupakan genre movie
 
-2. Rating	
-- Daftar penilaian dari user mengenai movie yang tersedia
+2. Rating : Daftar penilaian dari user mengenai movie yang tersedia
+	- userId : merupakan id (penanda) pada setiap user
+	- movieId : merupakan id (penanda) pada setiap movie
+	- rating : merupakan penilaian yang diberi oleh user
+	- timestamp : merupakan catatan digital
 
 ### Explanatory Data Analysis
 
@@ -64,23 +69,20 @@ Data yang digunakan dalam proyek ini adalah data **Movies & Ratings for Recommen
 
 Pada Gambar 1, _table_ di atas diperlihatkan mengenai contoh data yang terdapat pada dataset movies.
 
-2. Distribusi Usia
+2. Rating
  
-![age_distribution](https://github.com/fabasassa-lab/Stroke-Risk-Prediction/blob/main/image/age_distribution.png?raw=true)
+![rath](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/rath.png?raw=true)
 
-Pada Gambar 2, _plot_ di atas melihatkan distribusi usia pada dataset **Stroke Risk Prediction Dataset based on Literature**. Usia paling banyak terdapat pada rentang 30-34 tahun.
+Pada Gambar 2, _table_ di atas diperlihatkan mengenai contoh data yang terdapat pada dataset ratings.
 
-3. Distribusi Gender vs Risk
- 
-![gender_risk](https://github.com/fabasassa-lab/Stroke-Risk-Prediction/blob/main/image/gender_risk.png?raw=true)
+![ratd](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/ratd.png?raw=true)
 
-Pada Gambar 3, _plot_ di atas melihatkan distribusi gender pada dataset **Stroke Risk Prediction Dataset based on Literature**. Gender yang terkena penyakit stroke kebanyakan dari gender male.
+Pada Gambar 3, _table_ di atas diperlihatkan mengenai distribusi data yang terdapat pada dataset ratings.
 
-4. Correlation Matrix
+![plot](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/plot.png?raw=true)
 
-![cm_analysis](https://github.com/fabasassa-lab/Stroke-Risk-Prediction/blob/main/image/cm_analysis.png?raw=true)
+Pada Gambar 4, _plot_ di atas melihatkan distribusi rating pada dataset **Movie Recommendation System**. Rating paling banyak terdapat pada rentang 4.
 
-Pada Gambar 4, _plot_ di atas melihatkan observasi korelasi antara fitur _numerical_ dengan fitur target
 
 ## Data Preparation
 
