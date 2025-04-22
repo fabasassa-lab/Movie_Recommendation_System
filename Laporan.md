@@ -181,8 +181,8 @@ Thank You for Smoking (2006)                                           | Comedy|
 
 Tabel 4. Movie Top 10 yang direkomendasikan.
 
-| Movie Name                                              | Genre                            |
-| --------------------------------------------------------| ---------------------------------|
+| Movie Name                                              | Genre                          				  |
+| --------------------------------------------------------| --------------------------------------------------------------|
 | Heidi Fleiss: Hollywood Madam (1995)                    | Documentary		    |
 | Paths of Glory (1957)                                | Drama|War                  |
 | Jonah Who Will Be 25 in the Year 2000 (Jonas qui aura 25 ans en l'an 2000) (1976)                                       | Comedy                    |
@@ -192,7 +192,7 @@ Tabel 4. Movie Top 10 yang direkomendasikan.
 | Adam's Rib (1949)                                    | Comedy|Romance           |
 | Bad Boy Bubby (1993)                                   | Drama |
 | Enter the Void (2009) 			| Drama                     |
-| Brooklyn (2015)                		| CDrama|Romance            |
+| Brooklyn (2015)                		| Drama|Romance            |
 
 Pada Tabel 4 dan Tabel 5, *movie* yang bergenre drama menjadi *movie* yang paling tinggi ratingnya. Kemudian *top 10 movie* yang direkomendasikan sistem adalah *movie* dengan genre *comedy* dan *romance*.
 
