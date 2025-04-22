@@ -119,11 +119,11 @@ Pada Gambar 4, _plot_ di atas melihatkan distribusi rating pada dataset **Movie 
 - Alasan: Tujuannya adalah untuk mengevaluasi kemampuan generalisasi model. Model dilatih pada data latih dan dievaluasi pada data uji yang tidak pernah dilihat sebelumnya.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Tahapan ini menggunakan tiga algoritma, yaitu **KNN**, **Random Forest** dan **AdaBoost**. Hasil akhirnya adalah untuk mencari model terbaik sebagai solusi.
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Tahapan ini menggunakan dua algoritma, yaitu **Content Based Filtering** dan **Collaborative Filtering**. Hasil akhir yang diharapkan dari sistem rekomendasi ini adalah dapat memudahkan pengguna untuk mencari film yang diinginkan, baik berdasarkan preferensi film yang serupa, ataupun rekomendasi berdasarkan rating.
 
-**KNN**
+**Content Based Filtering**
 
-- **Cara kerja** : Dalam membangun model **KNN (K-Nearest Neighbors)**, digunakan module KNeighborsClassifier dari library sklearn. Digunakan parameter n_neighbors=5 dan weights='uniform' untuk membangun model. Untuk melakukan training, digunakan .fit(X_train, y_train) untuk fitting. Kemudian, untuk melakukan prediksi, digunakan .predict(X_test).
+- **Cara kerja** : Dalam membangun model **Content Based Filtering**, digunakan module TfidfVectorizer dari library sklearn. Mengekstraksi fitur konten (misalnya genre). Merepresentasi fitur menggunakan TF-IDF Vectorizer.  Menghitung Cosine Similarity antar film. Mencari film yang paling mirip (berdasarkan nilai cosine similarity). Mengembalikan Top-k film yang mirip dengan nama_movie. Pada fungsi tersebut juga ditetapkan k = 5 yang berarti akan mengeluarkan rekomendasi 5 film teratas berdasarkan genre.
 
 - Kelebihan:
 	- Mudah dipahami dan diimplementasikan: KNN merupakan salah satu algoritma yang paling sederhana dan mudah dipahami.
@@ -136,9 +136,9 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
 	- Memerlukan memori besar: KNN membutuhkan penyimpanan seluruh dataset karena memerlukan data tersebut untuk melakukan prediksi.
 	-Skalabilitas buruk: Dengan bertambahnya data, KNN mengalami kesulitan dalam hal kecepatan dan performa.
 
-**Random Forest**
+**Collaborative Filtering**
 
-- **Cara kerja** : Dalam membangun model **Random Forest**, digunakan module RandomForestClassifier dari library sklearn. Digunakan parameter n_estimators=100, max_depth=None dan random_state=42 untuk membangun model. Untuk melakukan training, digunakan .fit(X_train, y_train) untuk fitting. Kemudian, untuk melakukan prediksi, digunakan .predict(X_test).
+- **Cara kerja** : Dalam membangun model **Collaborative Filtering*, menggunakan pendekatan model-based dengan membuat sebuah arsitektur neural network sederhana bernama RecommenderNet. Model ini dirancang untuk mempelajari representasi (embedding) dari pengguna dan film, kemudian menghitung skor kecocokan antar keduanya. Proses pelatihan model menggunakan optimizer Adam dan dievaluasi dengan Root Mean Squared Error (RMSE) sebagai metrik. Model RecommenderNet mempelajari representasi pengguna dan film melalui dua layer embedding, lalu menghitung nilai kecocokan (match score) di antara keduanya menggunakan operasi dot product. Nilai tersebut kemudian disesuaikan dengan bias pengguna dan film, dan hasil akhirnya dipetakan ke dalam rentang 0 hingga 1 menggunakan fungsi aktivasi sigmoid.
 
 - Kelebihan:
 	- Kinerja yang baik pada dataset besar: Random Forest adalah algoritma ensemble yang terdiri dari banyak pohon keputusan dan dapat menangani dataset besar dengan baik.
@@ -150,19 +150,6 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
 	- Kurang interpretatif: Model Random Forest menghasilkan banyak pohon keputusan, yang membuatnya lebih sulit untuk diinterpretasikan dibandingkan dengan model pohon keputusan tunggal.
 	- Tidak cocok untuk masalah dengan data spasial atau urut (sequential data): Random Forest tidak dapat menangani urutan waktu atau data yang berhubungan secara spasial secara efektif.
 
-**AdaBoost**
-
-- **Cara kerja** : Dalam membangun model **AdaBoost**, digunakan module AdaBoostClassifier dari library sklearn. Digunakan parameter n_estimators=50, learning_rate=1.0, dan random_state=42 untuk membangun model. Untuk melakukan training, digunakan .fit(X_train, y_train) untuk fitting. Kemudian, untuk melakukan prediksi, digunakan .predict(X_test).
-
-- Kelebihan:
-	- Meningkatkan kinerja model lemah: AdaBoost meningkatkan performa model dasar (weak learners) dengan menggabungkan hasil prediksi beberapa model.
-	- Tahan terhadap overfitting: Pada dataset dengan ukuran kecil hingga sedang, AdaBoost cenderung lebih tahan terhadap overfitting.
-	- Kemampuan untuk menangani data yang kompleks: AdaBoost bisa menangani data dengan distribusi yang kompleks.
-	- Memperbaiki kesalahan model sebelumnya: Dengan memfokuskan lebih banyak perhatian pada data yang salah diklasifikasikan oleh model sebelumnya, AdaBoost dapat memberikan hasil yang lebih baik.
-- Kekurangan:
-	- Sensitif terhadap outlier: AdaBoost dapat menjadi sangat sensitif terhadap outlier karena memberikan bobot yang lebih besar pada data yang sulit untuk diklasifikasikan.
-	- Memerlukan banyak iterasi: Kadang-kadang AdaBoost membutuhkan banyak iterasi untuk memberikan hasil yang baik, yang bisa mempengaruhi waktu pelatihan.
-	- Rentan terhadap model dasar yang lemah: Jika model dasar (weak learner) yang digunakan terlalu sederhana atau tidak cukup kuat, AdaBoost mungkin tidak menghasilkan model yang baik.
 
 ## Evaluation
 Dalam proyek ini, akurasi digunakan sebagai metrik evaluasi utama untuk mengukur kinerja setiap model dalam klasifikasi penyakit stroke. Akurasi mengukur persentase prediksi yang benar dari total prediksi yang dilakukan oleh model.
