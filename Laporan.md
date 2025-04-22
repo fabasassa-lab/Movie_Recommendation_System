@@ -194,7 +194,7 @@ Tabel 4. Movie Top 10 yang direkomendasikan.
 | Enter the Void (2009) 			| Drama                     |
 | Brooklyn (2015)                		| Drama|Romance            |
 
-Pada Tabel 4 dan Tabel 5, *movie* yang bergenre drama menjadi *movie* yang paling tinggi ratingnya. Kemudian *top 10 movie* yang direkomendasikan sistem adalah *movie* dengan genre *comedy* dan *romance*.
+Berdasarkan Tabel 3 dan Tabel 4, film bergenre action memperoleh rating tertinggi dari pengguna. Selanjutnya, sepuluh film teratas yang direkomendasikan oleh sistem didominasi oleh genre drama dan comedy.
 
 - Kelebihan **Collaborative Filtering**:
 	- Tidak Membutuhkan Informasi Item yang Detail: Sistem hanya membutuhkan data interaksi pengguna (seperti rating), tanpa harus tahu isi atau deskripsi dari item tersebut (misalnya genre, sinopsis).
