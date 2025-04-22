@@ -65,19 +65,27 @@ Data yang digunakan dalam proyek ini adalah data **Movies & Ratings for Recommen
 
 1. Movie
 
+Gambar 1. Contoh Data Movies.
+
 ![movie](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/movh.png?raw=true)
 
 Pada Gambar 1, _table_ di atas diperlihatkan mengenai contoh data yang terdapat pada dataset movies.
 
 2. Rating
- 
+
+Gambar 2. Contoh Data Ratings.
+
 ![rath](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/rath.png?raw=true)
 
 Pada Gambar 2, _table_ di atas diperlihatkan mengenai contoh data yang terdapat pada dataset ratings.
 
+Gambar 3. Table Distribusi Data Ratings.
+
 ![ratd](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/ratd.png?raw=true)
 
 Pada Gambar 3, _table_ di atas diperlihatkan mengenai distribusi data yang terdapat pada dataset ratings. Dari _table_ di atas, diketahui bahwa nilai maksimum rating adalah 5 dan nilai minimumnya adalah 0. Artinya, skala rating berkisar antara 0 hingga 5.
+
+Gambar 4. Plot Distribusi Ratings.
 
 ![plot](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/plot.png?raw=true)
 
