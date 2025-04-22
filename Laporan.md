@@ -32,7 +32,7 @@ Bagaimana cara merekomendasikan film yang disukai oleh pengguna lain agar dapat 
 
 ### Goals
 
-Tujuan dari proyek ini adalah membangun sistem rekomendasi film yang akurat dengan memanfaatkan data rating serta aktivitas pengguna pada masa lalu. Sistem ini diharapkan dapat membantu pengguna dalam menemukan film yang relevan dengan preferensinya secara efisien, serta meningkatkan pengalaman pengguna secara keseluruhan.
+Tujuan dari proyek ini adalah membuat sistem rekomendasi film yang akurat dengan memanfaatkan data rating serta aktivitas pengguna pada masa lalu. Sistem ini diharapkan dapat membantu pengguna dalam menemukan film yang relevan dengan preferensinya secara efisien, serta meningkatkan pengalaman pengguna secara keseluruhan.
 
 ### Solution statements
 
@@ -207,54 +207,33 @@ Berdasarkan Tabel 3 dan Tabel 4, film bergenre action memperoleh rating tertingg
 
 
 ## Evaluation
-Dalam proyek ini, akurasi digunakan sebagai metrik evaluasi utama untuk mengukur kinerja setiap model dalam klasifikasi penyakit stroke. Akurasi mengukur persentase prediksi yang benar dari total prediksi yang dilakukan oleh model.
 
-Akurasi (Accuracy):
+### Content Based Filtering
 
-- Akurasi mengukur proporsi prediksi yang benar terhadap total prediksi yang dilakukan. Ini adalah metrik yang sangat umum digunakan dalam masalah klasifikasi. Akurasi dihitung dengan rumus:
+Evaluasi yang dapat digunakan adalah matriks presisi. Presisi merupakan sebuah kemampuan dari alat ukur untuk menunjukkan angka yang sama bila dipakai secara berulang-ulang dalam kondisi pengukuran dan obyek ukur yang sama. Pada kasus ini, presisi akan memprediksi label yang benar terhadap keseluruhan prediksi. 
 
-<div align="center">
-	<img src="https://github.com/fabasassa-lab/Stroke-Risk-Prediction/blob/main/image/akurasi.png?raw=true">
-</div>
+Rumus perhitungan matrik presisi:
 
-Dimana:
+![pres](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/pres.png?raw=true)
 
-- Jumlah Prediksi yang Benar adalah jumlah prediksi yang sesuai dengan label yang sebenarnya (true positives + true negatives).
-- Jumlah Total Data adalah jumlah total sampel data yang diprediksi (termasuk yang benar dan yang salah)​
- 
-Pada kasus ini, akurasi digunakan untuk menilai seberapa baik model dapat memprediksi status "at_risk" (mempunyai kemungkinan terkena stroke atau tidak) berdasarkan data yang tersedia.
+Dari hasil rekomendasi yang ditampilkan pada bagian modeling, diketahui bahwa pengguna akan mencari rekomendasi film terkait ` If I Stay (2014)`. Kemudian, sistem rekomendasi memberikan 5 film terkait yang memiliki genre serupa, yakni `Drama`. Berdasarkan rumus presisi di atas, diketahui bahwa keseluruhan rekomendasi yang diberikan memiliki genre serupa dengan film yang dicari rekomendasinya. Artinya, presisi sistem yang dibangun sebesar 5/5 atau 100%.
 
-<div align="center">
-	<img src="https://github.com/fabasassa-lab/Stroke-Risk-Prediction/blob/main/image/nilai.png?raw=true">
-</div>
+### Collaborative Filtering
 
-Pada Gambar di atas, _plot_ yang disajikan di atas, dapat diketahui bahwa model **Random Forest** memberikan nilai akurasi yang paling tinggi. Sehingga, model **Random Forest** lah yang dipilih sebagai model terbaik untuk melakukan klasifikasi penyakit stroke.
+Evaluasi metrik yang digunakan untuk mengukur kinerja model adalah metrik RMSE (*Root Mean Squared Error*). RMSE merupakan metode pengukuran dengan mengukur perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi, dan merupakan hasil kuadrat dari MSE. Keakuratan metode estimasi kesalahan pengukuran ditandai dengan adanya nilai RMSE yang kecil. 
 
-Tabel 1. Hasil Evaluasi Model
-|                 | train	  |	test        |
-|-----------------|-----------|-------------|
-|KNN		      | 0.933464  |	0.903571    |
-|AdaBoost	      | 0.933857  |	0.934286    |
-|RandomForest	  | 1.0  |	0.973286    |
+Semakin kecil nilai yang diperoleh RMSE, semakin akurat juga modelnya.
 
-Hasil dari _modeling_ dapat dilihat pada Tabel 1. Tabel diatas memberikan informasi detail terkait hasil _training_ dan _testing_
+Rumus perhitungan matrik MSE: 
 
-Tabel 2. Hasil Prediksi
+![mse](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/mse.png?raw=true)
 
-|    | y_true |	prediksi_KNN | prediksi_AdaBoost     | prediksi_RandomForest |
-|----|--------|--------------|-----------------------|-----------------------|
-|17813  | 1      | 1          | 0                   | 0                   |
-|6857| 0      | 0          | 0                   | 0                   |
-|7672| 1      | 1          | 1                   | 1                   |
-|9704| 1      | 1          | 1                   | 1                   |
-|14303| 0      | 0          | 0                   | 0                   |
-|26304| 1      | 1          | 1                   | 1                   |
-|3202| 0      | 0          | 0                   | 0                   |
-|27310| 0      | 0          | 0                   | 0                   |
-|11215| 0      | 0          | 0                   | 0                   |
-|20490| 0      | 0          | 0                   | 0                   |
+Gambar 5. Model Evaluasi Metriks
 
-Pada Tabel 2, disajikan informasi hasil prediksi dari model yang digunakan. Dari tabel yang disajikan dapat dilihat bahwa prediksi menggunakan **Random Forest**, **KNN** maupun **AdaBoost** memiliki hasil sesuai dengan data aslinya _`y_true`_. Melihat hasil prediksi dan nilai akurasi yang telah didapat, model **Random Forest** lah yang dipilih sebagai model terbaik untuk melakukan klasifikasi penyakit stroke. Dan melihat dari keberhasilan prediksi menggunakan **Random Forest** maka proyek ini mampu dan berhasil menyelesaikan _Goals_ yang diinginkan.
+![rmse](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/rmse.png?raw=true)
+
+Pada Gambar 5, visualisasi metrics memperlihatkan bahwa proses training model berjalan dengan stabil dan model mencapai konvergensi pada sekitar epoch ke-100. Dari hasil tersebut, didapatkan nilai error akhir sebesar sekitar 0.2090 dan error pada data validasi sekitar 0.2223. Hasil analisis akhir menunjukkan bahwa model tidak mengalami overfitting, karena grafik untuk data uji dan data train menunjukkan tren yang serupa dan stabil.
+
 
 **---Akhir Laporan---**
 
