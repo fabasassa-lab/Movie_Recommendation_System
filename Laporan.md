@@ -12,12 +12,14 @@
 
 Dengan pertumbuhan pesat industri hiburan digital, pengguna dihadapkan pada ribuan pilihan film dan serial setiap hari. Platform seperti Netflix, Hulu, dan Disney+ menyediakan beragam konten, yang justru menimbulkan fenomena yang disebut sebagai information overload atau kelebihan informasi. Oleh karena itu, sistem rekomendasi menjadi komponen penting dalam meningkatkan pengalaman pengguna dengan menyaring dan menyajikan konten yang sesuai dengan preferensi individu.
 
-Sistem rekomendasi film tidak hanya membantu pengguna menemukan film yang relevan, tetapi juga berkontribusi pada peningkatan waktu tonton dan retensi pelanggan. Studi oleh Gomez-Uribe & Hunt (2015) yang dilakukan di Netflix menunjukkan bahwa sekitar 75% dari tayangan berasal dari sistem rekomendasi mereka. Hal ini menunjukkan pentingnya sistem yang mampu memahami pola dan minat pengguna secara akurat.
+Sistem rekomendasi film tidak hanya membantu pengguna menemukan film yang relevan, tetapi juga berkontribusi pada peningkatan waktu tonton dan retensi pelanggan. Studi oleh Gomez-Uribe & Hunt (2015) [1] yang dilakukan di Netflix menunjukkan bahwa sekitar 75% dari tayangan berasal dari sistem rekomendasi mereka. Hal ini menunjukkan pentingnya sistem yang mampu memahami pola dan minat pengguna secara akurat.
 
-Pendekatan tradisional seperti content-based filtering dan collaborative filtering telah digunakan secara luas, namun memiliki keterbatasan dalam hal sparsity data dan cold-start problem. Untuk mengatasi tantangan tersebut, pendekatan deep learning telah menjadi solusi alternatif yang menjanjikan. Model deep learning seperti neural collaborative filtering (NCF) dapat menangkap hubungan non-linear antara pengguna dan item (film) yang tidak dapat ditangkap oleh metode klasik (He et al., 2017).
+Pendekatan tradisional seperti content-based filtering dan collaborative filtering telah digunakan secara luas, namun memiliki keterbatasan dalam hal sparsity data dan cold-start problem. Untuk mengatasi tantangan tersebut, pendekatan deep learning telah menjadi solusi alternatif yang menjanjikan. Model deep learning seperti neural collaborative filtering (NCF) dapat menangkap hubungan non-linear antara pengguna dan item (film) yang tidak dapat ditangkap oleh metode klasik (He et al., 2017) [2].
 
-Dalam proyek ini, sistem rekomendasi dikembangkan menggunakan pendekatan pembelajaran mendalam dengan arsitektur neural network. Data yang digunakan mencakup ID pengguna, ID film, serta rating yang diberikan, untuk kemudian diproses menggunakan teknik embedding dan pemodelan interaksi melalui jaringan saraf tiruan. Model ini dievaluasi menggunakan metrik seperti Root Mean Squared Error (RMSE) dan Mean Squared Error (MSE) guna memastikan keakuratan prediksi sistem terhadap preferensi pengguna.
+Referensi dari proyek ini adalah sebagai berikut:
+[The Netflix recommender system: Algorithms, business value, and innovation] (https://dl.acm.org/doi/10.1145/2843948) [1]
 
+[Neural collaborative filtering] (https://dl.acm.org/doi/10.1145/3038912.3052569) [2]
 
 ## Business Understanding
 
@@ -246,13 +248,11 @@ Pada Tabel 2, disajikan informasi hasil prediksi dari model yang digunakan. Dari
 **---Akhir Laporan---**
 
 _Github:_
-https://github.com/fabasassa-lab/Stroke-Risk-Prediction
+https://github.com/fabasassa-lab/Movie_Recommendation_System
 
 _Referensi:_
-[1] He, X., Liao, L., Zhang, H., Nie, L., Hu, X., & Chua, T. S. (2017). Neural collaborative filtering. Proceedings of the 26th International Conference on World Wide Web (WWW '17), 173–182. https://doi.org/10.1145/3038912.3052569
+[1] Gomez-Uribe, C. A., & Hunt, N. (2015). The Netflix recommender system: Algorithms, business value, and innovation. ACM Transactions on Management Information Systems (TMIS), 6(4), 1–19. https://doi.org/10.1145/2843948
 
-[2] Gomez-Uribe, C. A., & Hunt, N. (2015). The Netflix recommender system: Algorithms, business value, and innovation. ACM Transactions on Management Information Systems (TMIS), 6(4), 1–19. https://doi.org/10.1145/2843948
+[2] He, X., Liao, L., Zhang, H., Nie, L., Hu, X., & Chua, T. S. (2017). Neural collaborative filtering. Proceedings of the 26th International Conference on World Wide Web (WWW '17), 173–182. https://doi.org/10.1145/3038912.3052569
 
-[3] Zhang, S., Yao, L., Sun, A., & Tay, Y. (2019). Deep learning based recommender system: A survey and new perspectives. ACM Computing Surveys (CSUR), 52(1), 1–38. https://doi.org/10.1145/3285029
-
-[4] movies-and-ratings-for-recommendation-system. https://www.kaggle.com/datasets/nicoletacilibiu/movies-and-ratings-for-recommendation-system
+[3] movies-and-ratings-for-recommendation-system. https://www.kaggle.com/datasets/nicoletacilibiu/movies-and-ratings-for-recommendation-system
