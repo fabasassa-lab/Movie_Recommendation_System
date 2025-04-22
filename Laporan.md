@@ -17,9 +17,10 @@ Sistem rekomendasi film tidak hanya membantu pengguna menemukan film yang releva
 Pendekatan tradisional seperti content-based filtering dan collaborative filtering telah digunakan secara luas, namun memiliki keterbatasan dalam hal sparsity data dan cold-start problem. Untuk mengatasi tantangan tersebut, pendekatan deep learning telah menjadi solusi alternatif yang menjanjikan. Model deep learning seperti neural collaborative filtering (NCF) dapat menangkap hubungan non-linear antara pengguna dan item (film) yang tidak dapat ditangkap oleh metode klasik (He et al., 2017) [2].
 
 Referensi dari proyek ini adalah sebagai berikut:
-[The Netflix recommender system: Algorithms, business value, and innovation] (https://dl.acm.org/doi/10.1145/2843948) [1]
 
-[Neural collaborative filtering] (https://dl.acm.org/doi/10.1145/3038912.3052569) [2]
+[The Netflix recommender system: Algorithms, business value, and innovation](https://dl.acm.org/doi/10.1145/2843948) [1]
+
+[Neural collaborative filtering](https://dl.acm.org/doi/10.1145/3038912.3052569) [2]
 
 ## Business Understanding
 
