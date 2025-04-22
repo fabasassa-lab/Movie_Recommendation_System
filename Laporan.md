@@ -58,11 +58,11 @@ Data yang digunakan dalam proyek ini adalah data **Movies & Ratings for Recommen
 
 ### Explanatory Data Analysis
 
-1. Distribusi Stroke Risk
+1. Movie
 
-![stroke_risk](https://github.com/fabasassa-lab/Stroke-Risk-Prediction/blob/main/image/risk.png?raw=true)
+![movie](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/movh.png?raw=true)
 
-Pada Gambar 1, _plot_ di atas diperlihatkan bahwa data yang risk statusnya 0 (No) lebih banyak daripada data yang risk statusnya 1 (Yes).
+Pada Gambar 1, _table_ di atas diperlihatkan mengenai contoh data yang terdapat pada dataset movies.
 
 2. Distribusi Usia
  
