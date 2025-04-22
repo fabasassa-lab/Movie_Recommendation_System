@@ -51,15 +51,15 @@ Data yang digunakan dalam proyek ini adalah data **Movies & Ratings for Recommen
 ### Variabel-variabel pada Movies & Ratings for Recommendation System dataset adalah sebagai berikut:
 
 1. Movie : Daftar movie yang tersedia
-	- movieId : merupakan id (penanda) pada setiap movie
-	- title : merupakan judul movie 
-	- genres : merupakan genre movie
+	- movieId : merupakan id (penanda) pada setiap movie (9742 data)
+	- title : merupakan judul movie (9742 data)
+	- genres : merupakan genre movie (9742 data)
 
 2. Rating : Daftar penilaian dari user mengenai movie yang tersedia
-	- userId : merupakan id (penanda) pada setiap user
-	- movieId : merupakan id (penanda) pada setiap movie
-	- rating : merupakan penilaian yang diberi oleh user
-	- timestamp : merupakan catatan digital
+	- userId : merupakan id (penanda) pada setiap user (100836 data)
+	- movieId : merupakan id (penanda) pada setiap movie (100836 data)
+	- rating : merupakan penilaian yang diberi oleh user (100836 data)
+	- timestamp : merupakan catatan digital (100836 data)
 
 ### Explanatory Data Analysis
 
@@ -126,29 +126,26 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
 - **Cara kerja** : Dalam membangun model **Content Based Filtering**, digunakan module TfidfVectorizer dari library sklearn. Mengekstraksi fitur konten (misalnya genre). Merepresentasi fitur menggunakan TF-IDF Vectorizer.  Menghitung Cosine Similarity antar film. Mencari film yang paling mirip (berdasarkan nilai cosine similarity). Mengembalikan Top-k film yang mirip dengan nama_movie. Pada fungsi tersebut juga ditetapkan k = 5 yang berarti akan mengeluarkan rekomendasi 5 film teratas berdasarkan genre.
 
 - Kelebihan:
-	- Mudah dipahami dan diimplementasikan: KNN merupakan salah satu algoritma yang paling sederhana dan mudah dipahami.
-	- Non-parametric: KNN tidak membuat asumsi tentang distribusi data, sehingga sangat berguna untuk data yang tidak memiliki distribusi tertentu.
-	- Dapat digunakan untuk klasifikasi dan regresi: Meskipun lebih sering digunakan untuk klasifikasi, KNN juga bisa digunakan untuk regresi.
-	- Adaptif dengan data baru: KNN dapat segera diadaptasi dengan data baru tanpa memerlukan pelatihan ulang.
+	- Personalized: Rekomendasi benar-benar disesuaikan dengan preferensi unik setiap pengguna berdasarkan riwayat mereka sendiri, tanpa perlu data pengguna lain.
+	- Tidak Bergantung pada Jumlah Pengguna: Tetap bisa bekerja meskipun hanya ada sedikit pengguna (tidak membutuhkan komunitas besar).
+	- Bisa Merekomendasikan Item Baru (Cold Start untuk Item): Selama item tersebut memiliki informasi fitur yang lengkap (misalnya genre, deskripsi, aktor), sistem tetap bisa memberikan rekomendasi, meski belum pernah dirating oleh pengguna lain..
 - Kekurangan:
-	- Kompleksitas tinggi saat data besar: KNN membutuhkan waktu komputasi yang lama pada dataset yang besar karena harus menghitung jarak antara titik data dengan semua data lainnya.
-	- Sensitif terhadap fitur yang tidak relevan: Kinerja KNN dapat sangat dipengaruhi oleh data fitur yang tidak relevan atau memiliki skala yang berbeda.
-	- Memerlukan memori besar: KNN membutuhkan penyimpanan seluruh dataset karena memerlukan data tersebut untuk melakukan prediksi.
-	-Skalabilitas buruk: Dengan bertambahnya data, KNN mengalami kesulitan dalam hal kecepatan dan performa.
+	- Cenderung Terbatas (Overspecialization): Rekomendasi bisa menjadi terlalu mirip dengan item sebelumnya, membuat pengguna tidak menemukan hal baru (kurang keberagaman).
+	- Cold Start untuk Pengguna Baru: Sulit memberikan rekomendasi jika pengguna belum memiliki riwayat interaksi atau rating sebelumnya.
+	- Ketergantungan pada Fitur: Kualitas rekomendasi sangat tergantung pada kualitas dan kelengkapan informasi fitur item (genre, sinopsis, aktor, dll). Jika datanya terbatas, performa bisa menurun.
 
 **Collaborative Filtering**
 
 - **Cara kerja** : Dalam membangun model **Collaborative Filtering*, menggunakan pendekatan model-based dengan membuat sebuah arsitektur neural network sederhana bernama RecommenderNet. Model ini dirancang untuk mempelajari representasi (embedding) dari pengguna dan film, kemudian menghitung skor kecocokan antar keduanya. Proses pelatihan model menggunakan optimizer Adam dan dievaluasi dengan Root Mean Squared Error (RMSE) sebagai metrik. Model RecommenderNet mempelajari representasi pengguna dan film melalui dua layer embedding, lalu menghitung nilai kecocokan (match score) di antara keduanya menggunakan operasi dot product. Nilai tersebut kemudian disesuaikan dengan bias pengguna dan film, dan hasil akhirnya dipetakan ke dalam rentang 0 hingga 1 menggunakan fungsi aktivasi sigmoid.
 
 - Kelebihan:
-	- Kinerja yang baik pada dataset besar: Random Forest adalah algoritma ensemble yang terdiri dari banyak pohon keputusan dan dapat menangani dataset besar dengan baik.
-	- Robust terhadap overfitting: Karena menggunakan metode bootstrap aggregation (bagging), Random Forest cenderung lebih tahan terhadap overfitting dibandingkan pohon keputusan tunggal.
-	-Dapat menangani data yang hilang (missing data): Random Forest dapat mengatasi data yang hilang tanpa memerlukan imputasi atau pengisian data yang hilang.
-	- Menangani data yang sangat tidak seimbang dengan baik: Random Forest dapat menangani masalah kelas yang tidak seimbang dengan lebih baik.
+	- Tidak Membutuhkan Informasi Item yang Detail: Sistem hanya membutuhkan data interaksi pengguna (seperti rating), tanpa harus tahu isi atau deskripsi dari item tersebut (misalnya genre, sinopsis).
+	- Bisa Menangkap Preferensi yang Kompleks dan Tersembunyi: Karena rekomendasi dibuat dari pola kesamaan antar pengguna/item, sistem dapat menemukan hubungan menarik yang tidak eksplisit (misalnya, dua film berbeda genre tapi disukai oleh pengguna yang sama).
+	- Bisa Merekomendasikan Hal Baru untuk Pengguna: Sistem bisa menyarankan item yang sangat berbeda dari histori pengguna, selama ada pengguna lain yang mirip pernah menyukai item tersebut (lebih variatif).
 - Kekurangan:
-	- Kebutuhan komputasi tinggi: Model Random Forest membutuhkan lebih banyak sumber daya komputasi dan waktu pelatihan, terutama dengan jumlah pohon yang sangat banyak.
-	- Kurang interpretatif: Model Random Forest menghasilkan banyak pohon keputusan, yang membuatnya lebih sulit untuk diinterpretasikan dibandingkan dengan model pohon keputusan tunggal.
-	- Tidak cocok untuk masalah dengan data spasial atau urut (sequential data): Random Forest tidak dapat menangani urutan waktu atau data yang berhubungan secara spasial secara efektif.
+	- Skalabilitas: Saat jumlah pengguna dan item sangat besar, algoritma ini bisa menjadi berat secara komputasi dan membutuhkan optimisasi.
+	- Sparsity: Banyak dataset interaksi yang bersifat sparse (jarang), karena pengguna hanya berinteraksi dengan sebagian kecil item. Ini bisa mengurangi akurasi prediksi.
+	- Masalah Popularitas: Cenderung merekomendasikan item populer karena lebih banyak data interaksinya, sehingga item yang kurang populer bisa terabaikan meskipun berkualitas.
 
 
 ## Evaluation
