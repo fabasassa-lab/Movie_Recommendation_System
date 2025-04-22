@@ -28,21 +28,24 @@ Pada bagian ini, akan menjelaskan mengenai proses klarifikasi masalah yang terdi
 
 ### Problem Statements
 
-Bagaimana mengidentifikasi pasien dengan risiko tinggi terhadap stroke sebelum gejala serius muncul.
+Bagaimana cara merekomendasikan film yang disukai oleh pengguna lain agar dapat direkomendasikan secara efektif kepada pengguna lainnya? Permasalahan ini muncul karena banyaknya pilihan film yang tersedia, sementara pengguna sering kali mengalami kesulitan dalam menemukan film yang sesuai dengan preferensi mereka secara cepat dan tepat.
 
 ### Goals
 
-Tujuan dari proyek ini adalah untuk mengidentifikasi pasien dengan risiko tinggi terhadap stroke sebelum gejala serius muncul dengan membangun model klasifikasi yang mampu memprediksi apakah seseorang termasuk dalam kategori "berisiko stroke" berdasarkan informasi demografis yang ada.
+Tujuan dari proyek ini adalah membangun sistem rekomendasi film yang akurat dengan memanfaatkan data rating serta aktivitas pengguna pada masa lalu. Sistem ini diharapkan dapat membantu pengguna dalam menemukan film yang relevan dengan preferensinya secara efisien, serta meningkatkan pengalaman pengguna secara keseluruhan.
 
 ### Solution statements
 
-Solusi yang diusulkan adalah membangun dan membandingkan beberapa model klasifikasi untuk memprediksi risiko stroke, yaitu:
-- K-Nearest Neighbors (KNN)
-- Random Forest
-- AdaBoost
+Solusi yang ditawarkan dalam proyek ini adalah dengan mengimplementasikan dua algoritma machine learning, yaitu Content-Based Filtering dan Collaborative Filtering. 
 
-Untuk mengukur kinerja dari model yang dibangun, digunakan metrik evaluasi klasifikasi, yaitu:
-- Akurasi (Accuracy)
+- Collaborative Filtering:
+	Algoritma ini menggunakan pendekatan berdasarkan perilaku pengguna sebelumnya, seperti riwayat pemberian rating atau interaksi terhadap film tertentu. Dengan menganalisis pola kesamaan antara pengguna, sistem dapat memprediksi dan merekomendasikan film yang disukai oleh pengguna lain yang memiliki preferensi serupa. Pendekatan ini efektif untuk mengidentifikasi minat kolektif dari komunitas pengguna.
+
+- Content-Based Filtering:
+	Algoritma ini merekomendasikan film kepada pengguna berdasarkan kesamaan karakteristik antar item (film), seperti genre, sutradara, pemeran, atau sinopsis. Sistem menganalisis film-film yang disukai oleh pengguna di masa lalu, lalu mencari film lain dengan konten yang serupa. Dengan demikian, rekomendasi yang dihasilkan bersifat personal dan relevan dengan preferensi unik setiap pengguna.
+
+Untuk mengukur kinerja dari model yang dibangun, digunakan metrik evaluasi, yaitu:
+- Root Mean Squared Error (RMSE)
 
 ## Data Understanding
 Data yang digunakan dalam proyek ini adalah **35000** data **Movies & Ratings for Recommendation System** yang dapat diunduh dari situs [Kaggle](https://www.kaggle.com/datasets/nicoletacilibiu/movies-and-ratings-for-recommendation-system). Terdapat 19 fitur (kolom) yang terdapat pada dataset ini.
