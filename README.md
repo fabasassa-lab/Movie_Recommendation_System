@@ -98,31 +98,27 @@ Pada Gambar 4, _plot_ di atas melihatkan distribusi rating pada dataset **Movie 
 - Pada tahap awal, dilakukan proses penggabungan beberapa dataset, yaitu data film dan data rating.
 - Alasan: Penggabungan data dilakukan untuk menyatukan informasi dari berbagai sumber
 
-2. Cek Missing Value
-- Melakukan pemeriksaan terhadap nilai yang hilang (missing values) di setiap kolom dataset. Jika ditemukan, nilai tersebut dapat diatasi dengan metode seperti imputasi (mean, median, modus) atau dihapus tergantung pada proporsi dan pentingnya kolom tersebut.
-- Alasan: Missing values dapat menyebabkan error saat pelatihan model atau menghasilkan hasil yang bias jika tidak ditangani dengan tepat.
-
-3. Mengurutkan Data
+2. Mengurutkan Data
 - Melakukan proses pengurutan data untuk mempermudah analisis dan pemrosesan selanjutnya.
 - Alasan: Mempermudah proses analisis, mengidentifikasi pola penting, serta meningkatkan efisiensi saat membangun dan mengevaluasi model rekomendasi.
 
-4. Konversi Data to List
+3. Konversi Data to List
 - Melakukan proses konversi data ke dalam bentuk list (daftar). Konversi ini dilakukan untuk menyiapkan data dalam format yang dapat diterima oleh algoritma
 - Alasan: Proses pelatihan model atau evaluasi terkadang lebih mudah jika data telah dikonversi ke bentuk dasar seperti list atau array numpy.
 
-5. Membuat Dictionary
+4. Membuat Dictionary
 - Memetakan nilai asli dari suatu kolom (seperti ID pengguna atau ID film) ke dalam bentuk numerik yang dapat digunakan dalam model
 - Alasan: Agar kita bisa mengubah kembali hasil prediksi ke bentuk ID atau nama film yang dikenali pengguna.
 
-6. TF-IDF Vectorizer
+5. TF-IDF Vectorizer
 - Mengubah kolom genre menjadi vektor numerik dan menghitung kemiripan antar film berdasarkan konten (fitur teks), seperti genre.
 - Alasan: TF-IDF membantu model memahami bahwa dua film bisa mirip karena memiliki genre atau deskripsi yang serupa, sehingga cocok direkomendasikan ke pengguna yang menyukai salah satunya.
 
-7. Cosine Similarity
-- Mengukur kemiripan antar film berdasarkan fitur yang sudah ditransformasikan (biasanya dari TF-IDF) dan menemukan film-film yang paling mirip dengan film yang pernah ditonton atau disukai pengguna.
-- Alasan: Cocok untuk data vektor TF-IDF, karena menghitung arah vektor, bukan besarannya.
+6. Encoding
+- mengubah userId (yang berupa teks atau angka yang kompleks) menjadi representasi numerik yang lebih sederhana dan unik.
+- Alasan: Memudahkan proses dalam model rekomendasi dengan menggunakan angka sebagai representasi userId daripada teks.
 
-8. Splitting Data
+7. Splitting Data
 - Dataset dibagi menjadi dua bagian: data latih (train) dan data uji (test), biasanya dengan perbandingan 80:20.
 - Alasan: Tujuannya adalah untuk mengevaluasi kemampuan generalisasi model. Model dilatih pada data latih dan dievaluasi pada data uji yang tidak pernah dilihat sebelumnya.
 
