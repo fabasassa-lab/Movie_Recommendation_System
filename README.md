@@ -67,7 +67,7 @@ Data yang digunakan dalam proyek ini adalah data **Movies & Ratings for Recommen
 
 Gambar 1. Contoh Data Movies.
 
-![movie](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/movh.png?raw=true)
+| ![movie](https://github.com/fabasassa-lab/Movie_Recommendation_System/blob/main/images/movh.png?raw=true) |
 
 Pada Gambar 1, _table_ di atas diperlihatkan mengenai contoh data yang terdapat pada dataset movies.
 
